@@ -1,0 +1,132 @@
+@import 
+url('https://fonsts.googleleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.2s linear;
+}
+
+:root, :root.dark {
+    --primary-bg:#22252d;
+    --color-fg:#f8f8f8;
+    --secondary-bg:#292d36;
+    --buttons-bg:#272b33;
+}
+:root.light {
+    --primary-bg:#fff;
+    --color-fg:#292d36;
+    --secondary-bg:#f9f9f9;
+    --buttons-bg:#f7f7f7;
+}
+
+body {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    background-color: var(--primary-bg);
+    border-radius: 20px;
+    padding-top: 15px;
+    box-shadow: 0 0 20px 0 var(--secondary-bg);
+}
+.title h3 {
+    position: relative;
+    top: -10px;
+    border-bottom: 2px solid #222;
+    font-size: 24px;
+    font-weight: normal;
+    color: #181818;
+    letter-spacing: 1.5px;
+    font-family: monospace;
+}
+.resultBox {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    padding-top: 40px;
+}
+.resultBox input {
+    text-align: right;
+    width: 80%;
+    padding: 3px 10px;
+    background: var(--primary-bg);
+    border: 0;
+    color: var(--color-fg);
+    cursor: default;
+}
+
+.resultBox input[name="expression"] {
+    letter-spacing: 0.4em;
+    font-size: 1em;
+}
+.resultBox input[name="result"] {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 4px 10px;
+    letter-spacing: 0.1em;
+}
+
+.dark-mode {
+    margin: -15px auto;
+    background: var(--buttons-bg);
+    padding: 6px 8px;
+    border-radius: 8px;
+    position: relative;
+    top: 15px;
+}
+.dark-mode .dark,
+.dark-mode .light {
+    font-size: 1.5rem;
+    color: var(--color-fg);
+    margin: 2px 8px;
+    cursor: pointer;
+}
+
+.buttons {
+    width: calc(100% - 20px);
+    padding: 20px 10px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+}
+.buttons div {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 8px auto;
+}
+
+.buttons div input {
+    color: var(--color-fg);
+    background: var(--buttons-bg);
+    border: 0;
+    width: 75px;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.equal {
+    width: 130px !important;
+}
+
+.fnKeys {
+    color: #26fdd6 !important;
+}
+.operator {
+    color: #f47a7a !important;
+}

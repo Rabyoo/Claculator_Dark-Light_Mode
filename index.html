@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Calculator</title>
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h3>CODERABYOO</h3>
+        </div>
+        <div class="dark-mode">
+            <span class="dark">&#9790</span>
+            <span class="light">&#9728</span>
+        </div>
+        <form>
+            <div class="resultBox">
+                <input type="text" name="expression" readonly>
+                <input type="text" name="result" readonly>
+            </div>
+
+            <div class="buttons">
+                <div>
+                    <!-- this will clear the expression and result -->
+                    <input type="button" value="AC" 
+                    onclick="expression.value=''; result.value=''" class="fnKeys">
+                    <!-- this will delete the last entered key -->
+                    <input type="button" value="Del" 
+                    onclick="expression.value = expression.value.toString().slice(0, -1)" class="fnKeys">
+                    <input type="button" value="/" 
+                    onclick="expression.value += '/'" class="operator">
+                    <input type="button" value="*" 
+                    onclick="expression.value += '*'" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" 
+                    onclick="expression.value += '7'" value="7">
+                    <input type="button" 
+                    onclick="expression.value += '8'" value="8">
+                    <input type="button" 
+                    onclick="expression.value += '9'" value="9">
+                    <input type="button" 
+                    onclick="expression.value += '-'" value="-">
+                </div>
+
+                <div>
+                    <input type="button" 
+                    onclick="expression.value += '4'" value="4">
+                    <input type="button" 
+                    onclick="expression.value += '5'" value="5">
+                    <input type="button" 
+                    onclick="expression.value += '6'" value="6">
+                    <input type="button" 
+                    onclick="expression.value += '+'" value="+" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" 
+                    onclick="expression.value += '1'" value="1">
+                    <input type="button" 
+                    onclick="expression.value += '2'" value="2">
+                    <input type="button" 
+                    onclick="expression.value += '3'" value="3">
+                    <input type="button" value="." 
+                    onclick="expression.value += '.'" class="operator">
+                </div>
+
+                <div>
+                    <input type="button" 
+                    onclick="expression.value += '00'" value="00">
+                    <input type="button" 
+                    onclick="expression.value += '0'" value="0">
+                    <input type="button" value="=" class="operator equal" 
+                    onclick="result.value = new Intl.NumberFormat().format(eval(expression.value))">
+                </div>
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>
